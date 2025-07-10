@@ -1,12 +1,90 @@
-# React + Vite
+# ⚖️ PrevInfoBot — Consulta Jurídica Digital
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Print da aplicação](./src/assets/previnfobot-preview.png)
 
-Currently, two official plugins are available:
+[![React](https://img.shields.io/badge/React-18+-blue?logo=react)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwindcss)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-React%20Project-646CFF?logo=vite)](https://vitejs.dev/)
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O **PrevInfoBot** é uma interface web moderna desenvolvida para realizar **consultas jurídicas automatizadas** com resposta direta do back-end. Ideal para escritórios, advogados ou usuários que desejam tirar dúvidas rápidas sobre previdência social e direitos trabalhistas.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Funcionalidades principais
+
+- 🧠 Formulário de consulta com validação  
+- ⚙️ Integração com API via JWT (token)  
+- 📤 Upload de documentos com autenticação  
+- 📚 Histórico pessoal de consultas/documentos  
+- 📦 Interface reativa e responsiva  
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- **React 18+** — com React Router DOM  
+- **Tailwind CSS** — estilização ágil e moderna  
+- **Axios** — requisições HTTP seguras  
+- **FastAPI (no backend)** — não incluso nesse repositório  
+- **JWT Token** — controle de autenticação  
+
+---
+
+## 📁 Estrutura do projeto
+
+```
+src/
+├── components/ # componentes reutilizáveis
+├── pages/ # páginas da aplicação
+├── App.jsx # rotas e controle principal
+├── index.css # Tailwind e global styles
+└── main.jsx # ponto de entrada do React
+```
+
+---
+
+
+---
+
+## 🔐 Autenticação
+
+- Ao fazer login, o token JWT é salvo em `localStorage`  
+- Algumas rotas (como `/consulta` e `/dashboard`) exigem autenticação  
+
+---
+---
+![image](https://github.com/user-attachments/assets/9f9fd84c-6a9c-4efe-a08d-ce3a54308355)
+
+---
+
+---
+![image](https://github.com/user-attachments/assets/c4d138e7-2090-482a-bb5c-fce6a6409612)
+
+---
+---
+![image](https://github.com/user-attachments/assets/0da6e132-67da-4f7b-b2de-1af0619d7414)
+
+---
+
+## 📦 Como rodar o projeto localmente
+
+```bash
+npm install
+npm run dev
+```
+---
+
+## Certifique-se de que o back-end esteja rodando em http://localhost:8000
+
+---
+
+## 📮 Contato
+### Projeto mantido por @teofilonicolau.
+### Contribuições e feedbacks são sempre bem-vindos!
+
+
+
+##
+
+
