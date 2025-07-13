@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"; 
 import axios from "axios";
 
 export default function ConsultaForm({ setResposta, setEmConsulta, emConsulta }) {
@@ -27,18 +27,18 @@ export default function ConsultaForm({ setResposta, setEmConsulta, emConsulta })
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md animate-fadeIn space-y-4">
       <input
         type="text"
         value={pergunta}
         onChange={(e) => setPergunta(e.target.value)}
         placeholder="Digite sua dúvida jurídica"
         required
-        className="w-full p-2 border rounded"
+        className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <button
         type="submit"
-        className={`mt-2 w-full py-2 rounded text-white ${
+        className={`w-full py-3 rounded text-white font-semibold transition-all ${
           emConsulta ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-800"
         }`}
         disabled={emConsulta}

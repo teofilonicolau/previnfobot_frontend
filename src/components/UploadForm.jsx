@@ -18,12 +18,12 @@ export default function UploadForm() {
   };
 
   return (
-    <form onSubmit={handleUpload} className="space-y-4">
+    <form onSubmit={handleUpload} className="space-y-4 bg-white p-6 rounded-lg shadow-md animate-fadeIn">
       <input
         name="id_escritorio"
         placeholder="ID do escritório"
         required
-        className="w-full p-2 border rounded"
+        className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
 
       {/* Estilização do botão Choose File */}
@@ -34,14 +34,14 @@ export default function UploadForm() {
             type="file"
             name="arquivo"
             required
-            className="hidden" // oculta o input original
+            className="hidden"
           />
         </label>
       </div>
 
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 transition"
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 transition w-full"
       >
         Enviar Documento
       </button>

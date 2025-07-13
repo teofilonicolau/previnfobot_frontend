@@ -4,7 +4,9 @@ import DocumentosList from "../components/DocumentosList";
 export default function Historico() {
   return (
     <SidebarLayout>
-      <DocumentosList />
+      <div className="p-6 animate-fadeIn">
+        <DocumentosList />
+      </div>
     </SidebarLayout>
   );
 }

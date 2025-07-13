@@ -24,7 +24,7 @@ export default function Layout({ children, hideLogout = false }) {
       </header>
 
       {/* Conteúdo principal */}
-      <main className="flex-grow px-6 py-8">{children}</main>
+      <main className="flex-grow px-6 py-8 animate-fadeIn">{children}</main>
 
       {/* Rodapé */}
       <footer className="text-center py-4 text-sm text-gray-500">

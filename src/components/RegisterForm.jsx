@@ -31,43 +31,51 @@ export default function RegisterForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-10 space-y-4">
-      <h2 className="text-2xl font-bold text-center mb-4">📥 Criar Conta</h2>
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white max-w-md mx-auto p-8 rounded-lg shadow-xl animate-fadeIn"
+    >
+      <h2 className="text-2xl font-bold text-center text-primario mb-6">
+        📥 Criar Conta
+      </h2>
+
       <input
         type="text"
-        placeholder="Nome completo"
+        placeholder="👤 Nome completo"
         value={nome}
         onChange={(e) => setNome(e.target.value)}
-        className="w-full p-2 border rounded"
+        className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
         required
       />
       <input
         type="email"
-        placeholder="Email"
+        placeholder="✉️ Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full p-2 border rounded"
+        className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
         required
       />
       <input
         type="password"
-        placeholder="Senha"
+        placeholder="🔒 Senha"
         value={senha}
         onChange={(e) => setSenha(e.target.value)}
-        className="w-full p-2 border rounded"
+        className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
         required
       />
+
       <select
         value={plano}
         onChange={(e) => setPlano(e.target.value)}
-        className="w-full p-2 border rounded"
+        className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6"
       >
-        <option value="gratuito">Gratuito</option>
-        <option value="premium">Premium</option>
+        <option value="gratuito">🔓 Gratuito</option>
+        <option value="premium">💎 Premium</option>
       </select>
+
       <button
         type="submit"
-        className="bg-blue-700 text-white w-full py-2 rounded hover:bg-blue-900"
+        className="bg-blue-700 text-white w-full py-3 rounded-lg hover:bg-blue-900 transition-all font-semibold"
       >
         Criar Conta
       </button>
