@@ -3,8 +3,9 @@ import LoginPage from "./pages/LoginPage";
 import Dashboard from "./pages/Dashboard";
 import Historico from "./pages/Historico";
 import Register from "./pages/Register";
-import ConsultaApp from "./pages/ConsultaApp"; // ⬅️ novo import
-import Peticao from "./pages/Peticao"; // ⬅️ novo import
+import ConsultaApp from "./pages/ConsultaApp";
+import Peticao from "./pages/Peticao";
+import PerfilEscritorio from "./pages/PerfilEscritorio"; // ⬅️ novo import
 
 export default function App() {
   const isAutenticado = !!localStorage.getItem("token");
@@ -24,11 +25,15 @@ export default function App() {
         />
         <Route
           path="/consulta"
-          element={isAutenticado ? <ConsultaApp /> : <Navigate to="/login" />} // ⬅️ nova rota
+          element={isAutenticado ? <ConsultaApp /> : <Navigate to="/login" />}
         />
         <Route
           path="/peticao"
-          element={isAutenticado ? <Peticao /> : <Navigate to="/login" />} // ⬅️ nova rota
+          element={isAutenticado ? <Peticao /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/perfil"
+          element={isAutenticado ? <PerfilEscritorio /> : <Navigate to="/login" />}
         />
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
