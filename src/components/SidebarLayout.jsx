@@ -15,11 +15,11 @@ export default function SidebarLayout({ children }) {
     <div className="flex h-screen bg-fundo text-gray-800">
       {/* Sidebar */}
       <aside
-        className={`$${
+        className={`${
           expandido ? "w-64" : "w-20"
         } bg-primario text-white flex flex-col justify-between shadow-lg transition-all duration-500 ease-in-out`}
       >
-        {/* Toggle do menu */}
+        {/* Cabeçalho do menu */}
         <div className="p-4 flex items-center justify-between">
           <div className="text-lg font-bold">{expandido && "PrevInfoBot"}</div>
           <button onClick={() => setExpandido(!expandido)}>
@@ -47,9 +47,15 @@ export default function SidebarLayout({ children }) {
           >
             📄 {expandido && "Petição"}
           </button>
+          <button
+            onClick={() => navigate("/perfil")}
+            className="text-left px-3 py-2 rounded hover:bg-blue-800 transition-all"
+          >
+            🏢 {expandido && "Perfil"}
+          </button>
         </nav>
 
-        {/* Botão de Logout */}
+        {/* Logout */}
         <div className="p-4">
           <button
             onClick={logout}
