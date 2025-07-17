@@ -34,12 +34,49 @@ O **PrevInfoBot** é uma interface web moderna desenvolvida para realizar **cons
 ## 📁 Estrutura do projeto
 
 ```
-src/
-├── components/ # componentes reutilizáveis
-├── pages/ # páginas da aplicação
-├── App.jsx # rotas e controle principal
-├── index.css # Tailwind e global styles
-└── main.jsx # ponto de entrada do React
+
+advogpt-frontend/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── ConsultaForm.jsx
+│   │   ├── DocumentosList.jsx
+│   │   ├── Layout.jsx
+│   │   ├── LoginForm.jsx
+│   │   ├── RegisterForm.jsx
+│   │   ├── RespostaBox.jsx
+│   │   ├── SidebarLayout.jsx
+│   │   ├── UploadForm.jsx
+|   |   ├── UploadLogo.jsx
+|   |   ├── VizualizadorPeticao.jsx
+│   ├── pages/
+│   │   ├── ConsultaApp.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── Historico.jsx
+│   │   ├── LoginPage.jsx
+|   |   ├── PerfilEscritorio.jsx
+|   |   ├── Peticao.jsx
+│   │   ├── Register.jsx
+|   ├── relatorios/
+|   |   ├── relatorio_13_07_2025
+|   |   ├── relatorio_14_07_2025
+│   ├── services/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+├── vite.config.js
+
 ```
 
 ---
