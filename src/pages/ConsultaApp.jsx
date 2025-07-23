@@ -6,9 +6,14 @@ import SidebarLayout from "../components/SidebarLayout";
 export default function ConsultaApp() {
   const [resposta, setResposta] = useState("");
   const [emConsulta, setEmConsulta] = useState(false);
+  const [pergunta, setPergunta] = useState("");
+  const [area, setArea] = useState("previdenciario");
 
-  const tratarResposta = (texto) => {
-    setResposta(texto);
+  // Função para resetar o formulário
+  const resetForm = () => {
+    setResposta("");
+    setPergunta("");
+    setArea("previdenciario");
     setEmConsulta(false);
   };
 
@@ -16,14 +21,20 @@ export default function ConsultaApp() {
     <SidebarLayout>
       <div className="p-6 max-w-2xl mx-auto bg-white rounded-lg shadow-md animate-fadeIn">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">🔎 Consulta Jurídica</h2>
-
         <ConsultaForm
-          setResposta={tratarResposta}
+          setResposta={setResposta}
           emConsulta={emConsulta}
           setEmConsulta={setEmConsulta}
+          setPergunta={setPergunta}
+          setArea={setArea}
+          resetForm={resetForm}
         />
-
-        <RespostaBox resposta={resposta} />
+        <RespostaBox
+          resposta={resposta}
+          pergunta={pergunta}
+          area={area}
+          resetForm={resetForm}
+        />
       </div>
     </SidebarLayout>
   );
