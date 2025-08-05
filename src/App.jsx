@@ -5,7 +5,8 @@ import Historico from "./pages/Historico";
 import Register from "./pages/Register";
 import ConsultaApp from "./pages/ConsultaApp";
 import Peticao from "./pages/Peticao";
-import PerfilEscritorio from "./pages/PerfilEscritorio"; // ⬅️ novo import
+import PerfilEscritorio from "./pages/PerfilEscritorio";
+import ResetPassword from "./pages/ResetPassword";
 
 export default function App() {
   const isAutenticado = !!localStorage.getItem("token");
@@ -15,6 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route
           path="/dashboard"
           element={isAutenticado ? <Dashboard /> : <Navigate to="/login" />}
