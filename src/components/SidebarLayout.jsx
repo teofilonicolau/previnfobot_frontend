@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaBars } from "react-icons/fa"; // Ícone do menu hambúrguer
+import { FaBars, FaHome, FaHistory, FaFileAlt, FaUser, FaSearch } from "react-icons/fa";
 
 export default function SidebarLayout({ children }) {
   const [expandido, setExpandido] = useState(true);
@@ -10,6 +10,14 @@ export default function SidebarLayout({ children }) {
     localStorage.removeItem("token");
     navigate("/login");
   };
+
+  const menuItems = [
+    { path: "/dashboard", label: "Dashboard", icon: <FaHome /> },
+    { path: "/consulta", label: "Consulta", icon: <FaSearch /> },
+    { path: "/peticao", label: "Petição", icon: <FaFileAlt /> },
+    { path: "/historico", label: "Histórico", icon: <FaHistory /> },
+    { path: "/perfil", label: "Perfil", icon: <FaUser /> },
+  ];
 
   return (
     <div className="flex h-screen bg-fundo text-gray-800">
@@ -21,7 +29,7 @@ export default function SidebarLayout({ children }) {
       >
         {/* Cabeçalho do menu */}
         <div className="p-4 flex items-center justify-between">
-          <div className="text-lg font-bold">{expandido && "PrevInfoBot"}</div>
+          <div className="text-lg font-bold">{expandido && "PrevInfoBot ⚖️"}</div>
           <button onClick={() => setExpandido(!expandido)}>
             <FaBars className="text-white" />
           </button>
@@ -29,39 +37,26 @@ export default function SidebarLayout({ children }) {
 
         {/* Navegação */}
         <nav className="px-4 flex flex-col gap-2">
-          <button
-            onClick={() => navigate("/dashboard")}
-            className="text-left px-3 py-2 rounded hover:bg-blue-800 transition-all"
-          >
-            📤 {expandido && "Dashboard"}
-          </button>
-          <button
-            onClick={() => navigate("/historico")}
-            className="text-left px-3 py-2 rounded hover:bg-blue-800 transition-all"
-          >
-            📚 {expandido && "Histórico"}
-          </button>
-          <button
-            onClick={() => navigate("/peticao")}
-            className="text-left px-3 py-2 rounded hover:bg-blue-800 transition-all"
-          >
-            📄 {expandido && "Petição"}
-          </button>
-          <button
-            onClick={() => navigate("/perfil")}
-            className="text-left px-3 py-2 rounded hover:bg-blue-800 transition-all"
-          >
-            🏢 {expandido && "Perfil"}
-          </button>
+          {menuItems.map((item) => (
+            <button
+              key={item.path}
+              onClick={() => navigate(item.path)}
+              className="text-left px-3 py-2 rounded hover:bg-blue-800 transition-all flex items-center gap-2"
+            >
+              {item.icon}
+              {expandido && item.label}
+            </button>
+          ))}
         </nav>
 
         {/* Logout */}
         <div className="p-4">
           <button
             onClick={logout}
-            className="bg-secundario w-full py-2 rounded hover:bg-blue-700 transition"
+            className="bg-secundario w-full py-2 rounded hover:bg-blue-700 transition flex items-center justify-center gap-2"
           >
             {expandido ? "Sair" : "🚪"}
+          
           </button>
         </div>
       </aside>
