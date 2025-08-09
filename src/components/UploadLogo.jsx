@@ -8,16 +8,30 @@ export default function UploadLogo() {
 
   const enviarLogo = async (e) => {
     e.preventDefault();
+    
+    // ✅ PEGA O TOKEN DO LOCALSTORAGE
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("❌ Você precisa estar logado para enviar logo!");
+      return;
+    }
+
     const formData = new FormData();
     formData.append("arquivo", arquivo);
     formData.append("id_escritorio", idEscritorio);
 
     try {
-      await axios.post("http://localhost:8000/upload_logo", formData);
+      // ✅ ENVIA O TOKEN NO HEADER
+      await axios.post("http://localhost:8000/upload_logo", formData, {
+        headers: { 
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'multipart/form-data'
+        }
+      });
       alert("✅ Logo enviada com sucesso!");
     } catch (err) {
       console.error(err);
-      alert("❌ Erro ao enviar logo");
+      alert(`❌ Erro ao enviar logo: ${err.response?.data?.detail || err.message}`);
     }
   };
 
@@ -45,7 +59,7 @@ export default function UploadLogo() {
           <span className="sr-only">Escolher Arquivo</span>
           <input
             type="file"
-            accept=".png,.jpg"
+            accept=".png,.jpg,.jpeg"
             onChange={handleArquivoChange}
             className="hidden"
             id="input-arquivo"
@@ -63,6 +77,7 @@ export default function UploadLogo() {
       <button
         type="submit"
         className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-800 transition"
+        disabled={!arquivo || !idEscritorio}
       >
         🧾 Salvar Logo
       </button>
